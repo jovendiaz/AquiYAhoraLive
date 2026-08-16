@@ -1,11 +1,11 @@
 const intro = document.getElementById("intro");
 const bosque = document.getElementById("bosque");
 
-intro.onclick = () => {
-  intro.classList.add("apertura");
+intro.addEventListener("click", () => {
+  intro.classList.add("abrir");
 
   setTimeout(() => {
     intro.style.display = "none";
     bosque.classList.add("visible");
-  }, 2000);
-};
+  }, 1200);
+});
