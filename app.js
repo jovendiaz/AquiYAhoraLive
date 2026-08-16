@@ -1,1 +1,0 @@
-const gate=document.getElementById('gate'),forest=document.getElementById('forest');gate.onclick=()=>{gate.classList.add('open');setTimeout(()=>{gate.classList.add('hidden');forest.classList.remove('hidden');requestAnimationFrame(()=>forest.style.opacity=1);},1600)};
