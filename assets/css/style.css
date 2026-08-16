@@ -1,1 +1,101 @@
-*{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden;font-family:Georgia,serif}.screen{position:fixed;inset:0;width:100%;height:100%}.hidden{display:none}#intro{background:url("../images/puerta-bosque.png") center/cover no-repeat;cursor:pointer}#intro::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}.brand{position:absolute;top:22px;left:28px;color:#fff;font-weight:bold;font-size:30px;z-index:2}.overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;z-index:2;text-align:center}.overlay h1{font-size:72px;text-shadow:0 4px 18px #000}.overlay p{font-size:28px;margin-top:12px}#forest{background:url("../images/bosque-menu.png") center/cover no-repeat;color:#fff}nav{position:absolute;top:20px;left:0;right:0;padding:0 34px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,20,10,.28);backdrop-filter:blur(8px)}.logo{font-size:28px;font-weight:bold}.links a{margin-left:22px;font-size:20px}.hero{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(rgba(0,20,10,.15),rgba(0,20,10,.35))}.hero small{font-size:32px}.hero h2{font-size:110px}.hero p{font-size:30px;margin-top:18px}.opening{animation:fade .9s ease forwards}@keyframes fade{to{opacity:0}}
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  overflow:hidden;
+  font-family:Georgia,serif;
+  background:#06120a;
+  color:white;
+}
+
+/* PUERTA */
+
+#intro{
+  position:fixed;
+  inset:0;
+  background:url("../images/puerta-bosque.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+  cursor:pointer;
+  transition:opacity 2s ease, filter 2s ease;
+}
+
+#intro::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+}
+
+.texto{
+  position:relative;
+  text-align:center;
+}
+
+.texto h1{
+  font-size:72px;
+}
+
+.texto p{
+  margin-top:10px;
+  font-size:28px;
+}
+
+.apertura{
+  opacity:0;
+  filter:blur(12px);
+}
+
+/* BOSQUE */
+
+#bosque{
+  position:fixed;
+  inset:0;
+  background:url("../images/bosque-ser.jpg") center/cover no-repeat;
+  opacity:0;
+  transition:opacity 2s ease;
+}
+
+#bosque.visible{
+  opacity:1;
+}
+
+nav{
+  position:absolute;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:25px 40px;
+  background:rgba(0,0,0,.25);
+  backdrop-filter:blur(6px);
+}
+
+nav ul{
+  display:flex;
+  gap:28px;
+  list-style:none;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero h2{
+  font-size:38px;
+}
+
+.hero h1{
+  font-size:92px;
+  line-height:.95;
+}
+
+.hero p{
+  margin-top:18px;
+  font-size:28px;
+}
