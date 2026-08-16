@@ -1,36 +1,136 @@
-/* ===== EFECTO PORTAL ===== */
-
-#intro.abrir{
-  animation: portal 1.2s forwards;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-@keyframes portal{
-  0%{
-    transform:scale(1);
-    filter:brightness(1);
-  }
-
-  40%{
-    transform:scale(1.02);
-    filter:brightness(1.8);
-  }
-
-  70%{
-    filter:brightness(5);
-  }
-
-  100%{
-    opacity:0;
-    transform:scale(1.06);
-    filter:brightness(12);
-  }
+body{
+  overflow:hidden;
+  font-family:Georgia, serif;
+  background:#06120a;
+  color:white;
 }
+
+/* ===========================
+   PUERTA DE ENTRADA
+=========================== */
+
+#intro{
+  position:fixed;
+  inset:0;
+  background:url("../images/puerta-bosque.png") center center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:100;
+  transition:opacity 2s ease, filter 2s ease;
+}
+
+#intro::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+}
+
+#intro.apertura{
+  opacity:0;
+  filter:blur(12px);
+}
+
+.texto{
+  position:relative;
+  text-align:center;
+  z-index:2;
+}
+
+.texto h1{
+  font-size:72px;
+}
+
+.texto p{
+  margin-top:15px;
+  font-size:28px;
+  opacity:.95;
+}
+
+/* ===========================
+   BOSQUE
+=========================== */
 
 #bosque{
+  position:fixed;
+  inset:0;
+  background:url("../images/bosque-menu.png") center center/cover no-repeat;
   opacity:0;
-  transition:opacity .8s ease;
+  transition:opacity 2s ease;
 }
 
 #bosque.visible{
   opacity:1;
+}
+
+/* ===========================
+   MENÚ
+=========================== */
+
+nav{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  padding:22px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.22);
+  backdrop-filter:blur(6px);
+}
+
+nav h2{
+  font-size:22px;
+}
+
+nav ul{
+  display:flex;
+  gap:28px;
+  list-style:none;
+}
+
+nav li{
+  cursor:pointer;
+  transition:.3s;
+}
+
+nav li:hover{
+  color:#b7e57a;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h2{
+  font-size:42px;
+  margin-bottom:8px;
+}
+
+.hero h1{
+  font-size:96px;
+  line-height:.95;
+}
+
+.hero p{
+  margin-top:22px;
+  font-size:28px;
 }
