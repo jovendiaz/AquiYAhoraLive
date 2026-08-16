@@ -1,1 +1,11 @@
-const intro=document.getElementById("intro");const forest=document.getElementById("forest");intro.onclick=()=>{intro.classList.add("opening");setTimeout(()=>{intro.classList.add("hidden");forest.classList.remove("hidden")},850)};
+const intro = document.getElementById("intro");
+const bosque = document.getElementById("bosque");
+
+intro.onclick = () => {
+  intro.classList.add("apertura");
+
+  setTimeout(() => {
+    intro.style.display = "none";
+    bosque.classList.add("visible");
+  }, 2000);
+};
