@@ -1,1 +1,1 @@
-const gate=document.getElementById('gate'),forest=document.getElementById('forest');gate.onclick=()=>{gate.classList.add('open');setTimeout(()=>{gate.classList.add('hidden');forest.classList.remove('hidden');requestAnimationFrame(()=>forest.style.opacity=1);},1600)};
+const intro=document.getElementById("intro");const forest=document.getElementById("forest");intro.onclick=()=>{intro.classList.add("opening");setTimeout(()=>{intro.classList.add("hidden");forest.classList.remove("hidden")},850)};
