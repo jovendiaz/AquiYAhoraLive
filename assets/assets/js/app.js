@@ -1,0 +1,1 @@
+const w=document.getElementById("doorWrap");document.getElementById("openBtn").onclick=()=>{w.classList.add("open");setTimeout(()=>{intro.style.display="none";home.style.display="flex"},1700)};
