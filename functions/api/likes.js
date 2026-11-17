@@ -4,7 +4,7 @@ const json = (data, status = 200) => new Response(JSON.stringify(data), {
 
 export async function onRequest({ request, env }) {
   // El nombre de la vinculación se conserva tal como aparece en el panel de Cloudflare.
-  const db = env["base de datos"];
+  const db = env.DB;
   if (!db) return json({ error: "No se encontró la vinculación D1. Revisa el nombre de variable en Cloudflare." }, 500);
 
   if (request.method === "GET") {
